@@ -1,5 +1,6 @@
 import time
 from datetime import date, datetime
+import re
 
 time.sleep(2)
 now = datetime.now()
@@ -17,7 +18,7 @@ while True:
         customer_name = input("Enter customer name: ")
 
         food_items = input("Enter food items: ")
-        items_split = food_items.split(",")
+        items_split = re.split(r"[,\s-]", food_items)
 
         price = float(input("Enter Price: "))
         while price <= 0:
